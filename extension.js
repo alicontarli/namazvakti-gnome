@@ -103,7 +103,7 @@ class NamazVaktiButton extends PanelMenu.Button {
         this.startUpdateLoop();
         
         // Update menu details whenever it is opened
-        this.menu.connect('open-state-changed', (menu, open) => {
+        this._menuOpenedId = this.menu.connect('open-state-changed', (menu, open) => {
             if (open) {
                 this.updateUI();
             }
@@ -242,20 +242,20 @@ class NamazVaktiButton extends PanelMenu.Button {
             if (!this._enabled) return;
             
             this.isOffline = true;
-            this.fallbackToCachedData();
+            await this.fallbackToCachedData();
             this.updateUI();
         }
     }
 
-    fallbackToCachedData() {
+    async fallbackToCachedData() {
         try {
             const now = new Date();
             const settings = this.getSettingsObj();
             
-            this.todayTimings = Cache.loadFromCache(now.getFullYear(), now.getMonth() + 1, settings);
+            this.todayTimings = await Cache.loadFromCache(now.getFullYear(), now.getMonth() + 1, settings);
             
             const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-            this.tomorrowTimings = Cache.loadFromCache(tomorrow.getFullYear(), tomorrow.getMonth() + 1, settings);
+            this.tomorrowTimings = await Cache.loadFromCache(tomorrow.getFullYear(), tomorrow.getMonth() + 1, settings);
         } catch (e) {
             console.error('Failed loading fallback cache:', e.message);
         }
@@ -428,6 +428,12 @@ class NamazVaktiButton extends PanelMenu.Button {
         if (this._timeoutId) {
             GLib.Source.remove(this._timeoutId);
             this._timeoutId = null;
+        }
+
+        // Clean up menu signals
+        if (this._menuOpenedId) {
+            this.menu.disconnect(this._menuOpenedId);
+            this._menuOpenedId = 0;
         }
 
         // Clean up GSettings listeners

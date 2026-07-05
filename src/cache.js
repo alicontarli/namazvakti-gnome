@@ -1,38 +1,40 @@
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
-const CACHE_DIR_NAME = 'namazvaktignome';
-
 /**
- * Returns the Gio.File pointing to the cache directory and creates it if it doesn't exist.
- * @returns {Gio.File} Cache directory file object
+ * Returns the Gio.File cache directory for saving daily prayer timings.
+ * @returns {Gio.File}
  */
 function getCacheDirectory() {
-    const cacheDir = GLib.build_filenamev([GLib.get_user_cache_dir(), CACHE_DIR_NAME]);
-    const dir = Gio.File.new_for_path(cacheDir);
+    const cacheDir = GLib.get_user_cache_dir();
+    const dir = Gio.File.new_for_path(GLib.build_filenamev([cacheDir, 'namaz-vakti-gnome']));
     if (!dir.query_exists(null)) {
         try {
             dir.make_directory_with_parents(null);
         } catch (e) {
-            console.error('Failed to create cache directory:', e);
+            console.error('Failed to create cache directory:', e.message);
         }
     }
     return dir;
 }
 
 /**
- * Compares cached settings with current settings to verify validity.
+ * Checks if the cached settings match the current extension settings.
  * @param {object} cacheSettings 
  * @param {object} currentSettings 
- * @returns {boolean} True if they match
+ * @returns {boolean}
  */
 function settingsMatch(cacheSettings, currentSettings) {
     if (!cacheSettings || !currentSettings) return false;
-    if (cacheSettings.locationMode !== currentSettings.locationMode) return false;
-    if (cacheSettings.method !== currentSettings.method) return false;
-    if (cacheSettings.school !== currentSettings.school) return false;
-
-    if (currentSettings.locationMode === 'city') {
+    
+    // Core parameters must match
+    if (cacheSettings.locationMode !== currentSettings.locationMode ||
+        cacheSettings.method !== currentSettings.method ||
+        cacheSettings.school !== currentSettings.school) {
+        return false;
+    }
+    
+    if (cacheSettings.locationMode === 'city') {
         const cCity = (currentSettings.city || '').trim().toLowerCase();
         const cCountry = (currentSettings.country || '').trim().toLowerCase();
         const cacheCity = (cacheSettings.city || '').trim().toLowerCase();
@@ -41,83 +43,106 @@ function settingsMatch(cacheSettings, currentSettings) {
     } else {
         const diffLat = Math.abs(cacheSettings.latitude - currentSettings.latitude);
         const diffLng = Math.abs(cacheSettings.longitude - currentSettings.longitude);
-        // Match within ~100 meters tolerance to avoid minor floating point representation differences
+        // Match within ~100 meters tolerance
         return diffLat < 0.001 && diffLng < 0.001;
     }
 }
 
 /**
- * Saves monthly calendar data to cache file.
+ * Saves monthly calendar data to cache file asynchronously.
  * @param {number} year 
  * @param {number} month 
  * @param {object} settings 
  * @param {object} data 
+ * @returns {Promise<void>}
  */
 export function saveToCache(year, month, settings, data) {
-    try {
-        const dir = getCacheDirectory();
-        const filename = `calendar_${year}_${month.toString().padStart(2, '0')}.json`;
-        const file = dir.get_child(filename);
-        
-        const payload = {
-            settings: {
-                locationMode: settings.locationMode,
-                city: settings.city,
-                country: settings.country,
-                latitude: settings.latitude,
-                longitude: settings.longitude,
-                method: settings.method,
-                school: settings.school
-            },
-            data
-        };
+    return new Promise((resolve) => {
+        try {
+            const dir = getCacheDirectory();
+            const filename = `calendar_${year}_${month.toString().padStart(2, '0')}.json`;
+            const file = dir.get_child(filename);
+            
+            const payload = {
+                settings: {
+                    locationMode: settings.locationMode,
+                    city: settings.city,
+                    country: settings.country,
+                    latitude: settings.latitude,
+                    longitude: settings.longitude,
+                    method: settings.method,
+                    school: settings.school
+                },
+                data
+            };
 
-        const jsonString = JSON.stringify(payload, null, 2);
-        
-        // Write file synchronously using Gio
-        const outputStream = file.replace(null, false, Gio.FileCreateFlags.NONE, null);
-        outputStream.write_all(jsonString, null);
-        outputStream.close(null);
-    } catch (e) {
-        console.error(`Failed to save cache for ${year}-${month}:`, e);
-    }
+            const jsonString = JSON.stringify(payload, null, 2);
+            const encoder = new TextEncoder();
+            const bytes = encoder.encode(jsonString);
+            const gBytes = GLib.Bytes.new(bytes);
+
+            file.replace_contents_async(
+                gBytes,
+                null,
+                false,
+                Gio.FileCreateFlags.NONE,
+                null,
+                (fileObj, res) => {
+                    try {
+                        fileObj.replace_contents_finish(res);
+                    } catch (e) {
+                        console.error('Failed to finish cache writing:', e.message);
+                    }
+                    resolve();
+                }
+            );
+        } catch (e) {
+            console.error('Failed to start cache writing:', e.message);
+            resolve();
+        }
+    });
 }
 
 /**
- * Loads cached monthly data if settings match and file exists.
+ * Loads cached monthly data asynchronously if settings match and file exists.
  * @param {number} year 
  * @param {number} month 
  * @param {object} currentSettings 
- * @returns {object|null} The cached data array or null
+ * @returns {Promise<object|null>}
  */
 export function loadFromCache(year, month, currentSettings) {
-    try {
-        const dir = getCacheDirectory();
-        const filename = `calendar_${year}_${month.toString().padStart(2, '0')}.json`;
-        const file = dir.get_child(filename);
-        
-        if (!file.query_exists(null)) {
-            return null;
-        }
+    return new Promise((resolve) => {
+        try {
+            const dir = getCacheDirectory();
+            const filename = `calendar_${year}_${month.toString().padStart(2, '0')}.json`;
+            const file = dir.get_child(filename);
 
-        const [success, contents] = file.load_contents(null);
-        if (!success) {
-            return null;
+            // Read asynchronously (handles file not found or reading failures as exceptions)
+            file.load_contents_async(null, (fileObj, res) => {
+                try {
+                    const [success, contents] = fileObj.load_contents_finish(res);
+                    if (!success) {
+                        resolve(null);
+                        return;
+                    }
+                    const decoder = new TextDecoder('utf-8');
+                    const text = decoder.decode(contents);
+                    const payload = JSON.parse(text);
+                    
+                    if (settingsMatch(payload.settings, currentSettings)) {
+                        resolve(payload.data);
+                    } else {
+                        resolve(null);
+                    }
+                } catch (e) {
+                    // Resolve null on any errors (e.g. file does not exist, parse errors)
+                    resolve(null);
+                }
+            });
+        } catch (e) {
+            resolve(null);
         }
-
-        const decoder = new TextDecoder('utf-8');
-        const text = decoder.decode(contents);
-        const payload = JSON.parse(text);
-
-        if (settingsMatch(payload.settings, currentSettings)) {
-            return payload.data;
-        } else {
-            return null; // Cache invalidated due to settings mismatch
-        }
-    } catch (e) {
-        console.error(`Failed to load cache for ${year}-${month}:`, e);
-        return null;
-    }
+    });
 }
 
 /**
@@ -133,6 +158,6 @@ export function clearAllCache() {
             child.delete(null);
         }
     } catch (e) {
-        console.error('Failed to clear cache:', e);
+        console.error('Failed to clear cache directory:', e.message);
     }
 }

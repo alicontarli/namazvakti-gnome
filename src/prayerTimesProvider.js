@@ -72,13 +72,13 @@ export async function getTimingsForDate(date, settings, forceRefresh = false) {
     let monthData = null;
 
     if (!forceRefresh) {
-        monthData = loadFromCache(year, month, settings);
+        monthData = await loadFromCache(year, month, settings);
     }
 
     if (!monthData) {
         console.log(`Cache miss/refresh for ${year}-${month}. Fetching from AlAdhan API...`);
         monthData = await fetchCalendar(year, month, settings);
-        saveToCache(year, month, settings, monthData);
+        await saveToCache(year, month, settings, monthData);
     }
 
     if (monthData && monthData.length >= day) {
