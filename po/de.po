@@ -1,0 +1,230 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: namaz-vakti-gnome\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Namaz Vakti Gnome"
+msgstr "Namaz Vakti Gnome"
+
+msgid "Loading..."
+msgstr "Laden..."
+
+msgid "Loading Location..."
+msgstr "Ort wird geladen..."
+
+msgid "Refresh now"
+msgstr "Jetzt aktualisieren"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Offline"
+msgstr "Offline"
+
+msgid "Error - Failed to load data"
+msgstr "Fehler - Daten konnten nicht geladen werden"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "Offline — using cached timings"
+msgstr "Offline — gespeicherte Zeiten werden verwendet"
+
+msgid "Last update: %1$s"
+msgstr "Letzte Aktualisierung: %1$s"
+
+msgid "%1$s time has entered."
+msgstr "%1$s-Zeit hat begonnen."
+
+msgid "%2$d minute(s) remaining for %1$s"
+msgstr "Noch %2$d Minute(n) bis %1$s"
+
+msgid "Imsak"
+msgstr "Imsak"
+
+msgid "Sunrise"
+msgstr "Sonnenaufgang"
+
+msgid "Dhuhr"
+msgstr "Dhuhr"
+
+msgid "Asr"
+msgstr "Asr"
+
+msgid "Maghrib"
+msgstr "Maghrib"
+
+msgid "Isha"
+msgstr "Isha"
+
+msgid "%1$d hour(s) %2$d minute(s)"
+msgstr "%1$d Std. %2$d Min."
+
+msgid "%1$d minute(s)"
+msgstr "%1$d Minute(n)"
+
+msgid "%1$d min"
+msgstr "%1$d Min."
+
+msgid "%1$s remaining until %2$s"
+msgstr "Noch %1$s bis %2$s"
+
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+msgid "Location: %1$s"
+msgstr "Ort: %1$s"
+
+msgid "General"
+msgstr "Allgemein"
+
+msgid "Location Settings"
+msgstr "Ortseinstellungen"
+
+msgid "Select the location method and enter your details for calculating prayer times."
+msgstr "Wählen Sie die Ortungsmethode und geben Sie Ihre Daten zur Berechnung der Gebetszeiten ein."
+
+msgid "Location Determination Method"
+msgstr "Ortungsbestimmungsmethode"
+
+msgid "City and Country"
+msgstr "Stadt und Land"
+
+msgid "Geographic Coordinates (Latitude / Longitude)"
+msgstr "Geografische Koordinaten (Breitengrad / Längengrad)"
+
+msgid "City"
+msgstr "Stadt"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "Latitude"
+msgstr "Breitengrad"
+
+msgid "Longitude"
+msgstr "Längengrad"
+
+msgid "Location Test"
+msgstr "Ortstest"
+
+msgid "Performs a connection test to the AlAdhan API server using chosen settings"
+msgstr "Führt einen Verbindungstest zum AlAdhan-API-Server mit den gewählten Einstellungen durch"
+
+msgid "Verify Location and Refresh"
+msgstr "Ort überprüfen und aktualisieren"
+
+msgid "Verifying..."
+msgstr "Überprüfung..."
+
+msgid "Verified and Refreshed!"
+msgstr "Überprüft und aktualisiert!"
+
+msgid "Verification Failed"
+msgstr "Überprüfung fehlgeschlagen"
+
+msgid "Error: Connection Issue"
+msgstr "Fehler: Verbindungsproblem"
+
+msgid "Calculation Settings"
+msgstr "Berechnungseinstellungen"
+
+msgid "Calculation Method"
+msgstr "Berechnungsmethode"
+
+msgid "Asr Calculation School"
+msgstr "Asr-Berechnungsschule"
+
+msgid "Minute Adjustments"
+msgstr "Minutenanpassungen"
+
+msgid "Prayer times are calculated based on the selected method. If there are discrepancies with your local mosque timetable, you can make minute-by-minute adjustments."
+msgstr "Die Gebetszeiten werden basierend auf der ausgewählten Methode berechnet. Bei Abweichungen zu Ihrem lokalen Moschee-Stundenplan können Sie Minutenanpassungen vornehmen."
+
+msgid "Imsak Adjustment (Min)"
+msgstr "Imsak-Anpassung (Min)"
+
+msgid "Sunrise Adjustment (Min)"
+msgstr "Sonnenaufgang-Anpassung (Min)"
+
+msgid "Dhuhr Adjustment (Min)"
+msgstr "Dhuhr-Anpassung (Min)"
+
+msgid "Asr Adjustment (Min)"
+msgstr "Asr-Anpassung (Min)"
+
+msgid "Maghrib Adjustment (Min)"
+msgstr "Maghrib-Anpassung (Min)"
+
+msgid "Isha Adjustment (Min)"
+msgstr "Isha-Anpassung (Min)"
+
+msgid "Appearance Settings"
+msgstr "Aussehen-Einstellungen"
+
+msgid "Panel Display Mode"
+msgstr "Panel-Anzeigemodus"
+
+msgid "Show Sunrise Time in Panel"
+msgstr "Sonnenaufgangszeit im Panel anzeigen"
+
+msgid "Show Imsak Time in Panel"
+msgstr "Imsakzeit im Panel anzeigen"
+
+msgid "Use 24-Hour Format"
+msgstr "24-Stunden-Format verwenden"
+
+msgid "Show Tooltip (When hovering over panel)"
+msgstr "Tooltip anzeigen (beim Überfahren des Panels)"
+
+msgid "Show Remaining Time in HH:MM Format"
+msgstr "Restzeit im HH:MM-Format anzeigen"
+
+msgid "Notification Settings"
+msgstr "Benachrichtigungseinstellungen"
+
+msgid "Send Notification at Prayer Time"
+msgstr "Benachrichtigung zur Gebetszeit senden"
+
+msgid "Warn N Minutes Before Prayer Time (0 = Disabled)"
+msgstr "N Minuten vor Gebetszeit warnen (0 = Deaktiviert)"
+
+msgid "Diyanet İşleri Başkanlığı (Turkey)"
+msgstr "Diyanet (Türkei)"
+
+msgid "Muslim World League"
+msgstr "Islamische Weltliga (MWL)"
+
+msgid "ISNA"
+msgstr "Islamische Gesellschaft Nordamerikas (ISNA)"
+
+msgid "Egyptian General Authority of Survey"
+msgstr "Ägyptische Vermessungsbehörde"
+
+msgid "Umm al-Qura, Makkah"
+msgstr "Umm al-Qura, Mekka"
+
+msgid "Automatic / Default"
+msgstr "Automatisch / Standard"
+
+msgid "Standard (Shafi, Maliki, Hanbali)"
+msgstr "Standard (Schafi'i, Maliki, Hanbali)"
+
+msgid "Hanafi"
+msgstr "Hanafitisch"
+
+msgid "Icon + Prayer name + Remaining time"
+msgstr "Symbol + Gebetsname + Restzeit"
+
+msgid "Prayer name + Remaining time"
+msgstr "Gebetsname + Restzeit"
+
+msgid "Only remaining time"
+msgstr "Nur Restzeit"
+
+msgid "Only icon"
+msgstr "Nur Symbol"
+

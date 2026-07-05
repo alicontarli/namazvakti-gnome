@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.namaz-vakti-gnome" path="/org/gnome/shell/extensions/namaz-vakti-gnome/">
+    <key name="location-mode" type="s">
+      <default>'city'</default>
+      <summary>Location selection mode</summary>
+      <description>Mode for setting location: 'city' or 'coords'</description>
+    </key>
+    <key name="city" type="s">
+      <default>'İstanbul'</default>
+      <summary>City name</summary>
+      <description>City name for API request</description>
+    </key>
+    <key name="country" type="s">
+      <default>'Turkey'</default>
+      <summary>Country name</summary>
+      <description>Country name for API request</description>
+    </key>
+    <key name="latitude" type="d">
+      <default>41.0082</default>
+      <summary>Latitude</summary>
+      <description>Latitude coordinate</description>
+    </key>
+    <key name="longitude" type="d">
+      <default>28.9784</default>
+      <summary>Longitude</summary>
+      <description>Longitude coordinate</description>
+    </key>
+    <key name="calculation-method" type="s">
+      <default>'13'</default>
+      <summary>Calculation method</summary>
+      <description>AlAdhan prayer calculation method ID</description>
+    </key>
+    <key name="school" type="s">
+      <default>'1'</default>
+      <summary>Asr calculation school</summary>
+      <description>0 for Standard/Shafi/Maliki/Hanbali, 1 for Hanafi</description>
+    </key>
+    <key name="imsak-adjustment" type="i">
+      <default>0</default>
+      <range min="-30" max="30"/>
+      <summary>Imsak offset</summary>
+    </key>
+    <key name="gunes-adjustment" type="i">
+      <default>0</default>
+      <range min="-30" max="30"/>
+      <summary>Gunes offset</summary>
+    </key>
+    <key name="ogle-adjustment" type="i">
+      <default>0</default>
+      <range min="-30" max="30"/>
+      <summary>Ogle offset</summary>
+    </key>
+    <key name="ikindi-adjustment" type="i">
+      <default>0</default>
+      <range min="-30" max="30"/>
+      <summary>Ikindi offset</summary>
+    </key>
+    <key name="aksam-adjustment" type="i">
+      <default>0</default>
+      <range min="-30" max="30"/>
+      <summary>Aksam offset</summary>
+    </key>
+    <key name="yatsi-adjustment" type="i">
+      <default>0</default>
+      <range min="-30" max="30"/>
+      <summary>Yatsi offset</summary>
+    </key>
+    <key name="view-mode" type="s">
+      <default>'full'</default>
+      <summary>View mode in top panel</summary>
+    </key>
+    <key name="show-gunes" type="b">
+      <default>true</default>
+      <summary>Show Gunes in times list</summary>
+    </key>
+    <key name="show-imsak" type="b">
+      <default>true</default>
+      <summary>Show Imsak in times list</summary>
+    </key>
+    <key name="use-24h" type="b">
+      <default>true</default>
+      <summary>Use 24h format for times list</summary>
+    </key>
+    <key name="show-tooltip" type="b">
+      <default>true</default>
+      <summary>Show tooltip on panel hover</summary>
+    </key>
+    <key name="show-hh-mm" type="b">
+      <default>true</default>
+      <summary>Show remaining duration in HH:MM format (otherwise in minutes)</summary>
+    </key>
+    <key name="notify-on-time" type="b">
+      <default>false</default>
+      <summary>Send notifications on prayer times</summary>
+    </key>
+    <key name="notify-before-minutes" type="i">
+      <default>0</default>
+      <range min="0" max="15"/>
+      <summary>Send warning notification N minutes before prayer time</summary>
+    </key>
+    <key name="language" type="s">
+      <default>'auto'</default>
+      <summary>Language selection override</summary>
+      <description>Language code ('auto', 'tr', 'ar', 'en', etc.)</description>
+    </key>
+  </schema>
+</schemalist>

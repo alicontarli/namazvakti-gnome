@@ -1,0 +1,7 @@
+# Compiled GSettings schemas
+schemas/gschemas.compiled
+
+# Editors and system temp files
+*~
+*.swp
+.DS_Store

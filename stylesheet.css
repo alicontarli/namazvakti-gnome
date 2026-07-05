@@ -1,0 +1,69 @@
+.vakit-menu-box {
+    min-width: 260px;
+    padding: 8px;
+}
+
+.vakit-menu-title {
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 6px 8px;
+    text-align: center;
+}
+
+.vakit-menu-subtitle {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+.vakit-menu-list {
+    margin: 8px 0;
+}
+
+.vakit-menu-row {
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 2px 0;
+}
+
+.vakit-menu-row-active {
+    background-color: rgba(53, 132, 228, 0.25); /* Accent blue with opacity */
+    border: 1px solid rgba(53, 132, 228, 0.5);
+    font-weight: bold;
+}
+
+.vakit-menu-cell-name {
+    text-align: left;
+}
+
+.vakit-menu-cell-time {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.vakit-menu-cell-remaining {
+    text-align: right;
+    font-size: 0.85em;
+    color: #3584e4;
+    font-variant-numeric: tabular-nums;
+    font-weight: bold;
+}
+
+.vakit-status-label {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 4px;
+}
+
+.vakit-panel-box {
+    spacing: 6px;
+}
+
+#panel .panel-button.namaz-vakti-button {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+

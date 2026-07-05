@@ -1,0 +1,16 @@
+{
+  "uuid": "namaz-vakti-gnome@local",
+  "name": "Namaz Vakti Gnome",
+  "description": "GNOME Shell için namaz vakti ve kalan süre göstergesi. AlAdhan API ile çalışır.",
+  "url": "https://github.com/namaz-vakti-gnome/namaz-vakti-gnome",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.namaz-vakti-gnome",
+  "gettext-domain": "namaz-vakti-gnome"
+}

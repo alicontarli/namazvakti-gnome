@@ -1,0 +1,229 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: namaz-vakti-gnome\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Namaz Vakti Gnome"
+msgstr "Namaz Vakti Gnome"
+
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+msgid "Loading Location..."
+msgstr "Konum Yükleniyor..."
+
+msgid "Refresh now"
+msgstr "Şimdi yenile"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Offline"
+msgstr "Çevrimdışı"
+
+msgid "Error - Failed to load data"
+msgstr "Hata - Veri yüklenemedi"
+
+msgid "Error"
+msgstr "Hata"
+
+msgid "Offline — using cached timings"
+msgstr "Çevrimdışı — son kayıtlı vakitler kullanılıyor"
+
+msgid "Last update: %1$s"
+msgstr "Son güncelleme: %1$s"
+
+msgid "%1$s time has entered."
+msgstr "%1$s vakti girdi."
+
+msgid "%2$d minute(s) remaining for %1$s"
+msgstr "%1$s vaktine %2$d dakika kaldı."
+
+msgid "Imsak"
+msgstr "İmsak"
+
+msgid "Sunrise"
+msgstr "Güneş"
+
+msgid "Dhuhr"
+msgstr "Öğle"
+
+msgid "Asr"
+msgstr "İkindi"
+
+msgid "Maghrib"
+msgstr "Akşam"
+
+msgid "Isha"
+msgstr "Yatsı"
+
+msgid "%1$d hour(s) %2$d minute(s)"
+msgstr "%1$d saat %2$d dakika"
+
+msgid "%1$d minute(s)"
+msgstr "%1$d dakika"
+
+msgid "%1$d min"
+msgstr "%1$d dk"
+
+msgid "%1$s remaining until %2$s"
+msgstr "%2$s vaktine %1$s kaldı"
+
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+msgid "Location: %1$s"
+msgstr "Konum: %1$s"
+
+msgid "General"
+msgstr "Genel"
+
+msgid "Location Settings"
+msgstr "Konum Ayarları"
+
+msgid "Select the location method and enter your details for calculating prayer times."
+msgstr "Namaz vakitlerini hesaplamak için konum yöntemini seçip bilgilerinizi girin."
+
+msgid "Location Determination Method"
+msgstr "Konum Belirleme Yöntemi"
+
+msgid "City and Country"
+msgstr "Şehir ve Ülke"
+
+msgid "Geographic Coordinates (Latitude / Longitude)"
+msgstr "Coğrafi Koordinatlar (Enlem / Boylam)"
+
+msgid "City"
+msgstr "Şehir"
+
+msgid "Country"
+msgstr "Ülke"
+
+msgid "Latitude"
+msgstr "Enlem"
+
+msgid "Longitude"
+msgstr "Boylam"
+
+msgid "Location Test"
+msgstr "Konum Testi"
+
+msgid "Performs a connection test to the AlAdhan API server using chosen settings"
+msgstr "Seçili ayarlar ile AlAdhan API sunucusuna bağlantı testi yapar"
+
+msgid "Verify Location and Refresh"
+msgstr "Konumu Doğrula ve Yenile"
+
+msgid "Verifying..."
+msgstr "Doğrulanıyor..."
+
+msgid "Verified and Refreshed!"
+msgstr "Doğrulandı ve Yenilendi!"
+
+msgid "Verification Failed"
+msgstr "Doğrulama Başarısız"
+
+msgid "Error: Connection Issue"
+msgstr "Hata: Bağlantı Sorunu"
+
+msgid "Calculation Settings"
+msgstr "Hesaplama Ayarları"
+
+msgid "Calculation Method"
+msgstr "Hesap Yöntemi"
+
+msgid "Asr Calculation School"
+msgstr "İkindi Mezhebi"
+
+msgid "Minute Adjustments"
+msgstr "Dakika Düzeltmeleri"
+
+msgid "Prayer times are calculated based on the selected method. If there are discrepancies with your local mosque timetable, you can make minute-by-minute adjustments."
+msgstr "Vakitler seçilen hesap yöntemine göre üretilir. Yerel takvim veya cami vakitleriyle fark oluşursa dakika düzeltmelerini kullanabilirsiniz."
+
+msgid "Imsak Adjustment (Min)"
+msgstr "İmsak Düzeltmesi (Dk)"
+
+msgid "Sunrise Adjustment (Min)"
+msgstr "Güneş Düzeltmesi (Dk)"
+
+msgid "Dhuhr Adjustment (Min)"
+msgstr "Öğle Düzeltmesi (Dk)"
+
+msgid "Asr Adjustment (Min)"
+msgstr "İkindi Düzeltmesi (Dk)"
+
+msgid "Maghrib Adjustment (Min)"
+msgstr "Akşam Düzeltmesi (Dk)"
+
+msgid "Isha Adjustment (Min)"
+msgstr "Yatsı Düzeltmesi (Dk)"
+
+msgid "Appearance Settings"
+msgstr "Görünüm Ayarları"
+
+msgid "Panel Display Mode"
+msgstr "Panel Görüntüleme Modu"
+
+msgid "Show Sunrise Time in Panel"
+msgstr "Güneş Vaktini Panelde Göster"
+
+msgid "Show Imsak Time in Panel"
+msgstr "İmsak Vaktini Panelde Göster"
+
+msgid "Use 24-Hour Format"
+msgstr "24 Saat Biçimini Kullan"
+
+msgid "Show Tooltip (When hovering over panel)"
+msgstr "Tooltip Göster (Panel üzerine gelindiğinde)"
+
+msgid "Show Remaining Time in HH:MM Format"
+msgstr "Kalan Süreyi HH:MM Biçiminde Göster"
+
+msgid "Notification Settings"
+msgstr "Bildirim Ayarları"
+
+msgid "Send Notification at Prayer Time"
+msgstr "Vakit Geldiğinde Bildirim Gönder"
+
+msgid "Warn N Minutes Before Prayer Time (0 = Disabled)"
+msgstr "Vakitten N Dakika Önce Hatırlat (0 = Devre Dışı)"
+
+msgid "Diyanet İşleri Başkanlığı (Turkey)"
+msgstr "Diyanet İşleri Başkanlığı (Türkiye)"
+
+msgid "Muslim World League"
+msgstr "Müslüman Dünya Birliği (MWL)"
+
+msgid "ISNA"
+msgstr "Kuzey Amerika İslam Birliği (ISNA)"
+
+msgid "Egyptian General Authority of Survey"
+msgstr "Mısır Genel Araştırma Kurulu"
+
+msgid "Umm al-Qura, Makkah"
+msgstr "Ümmü-l Kurra, Mekke"
+
+msgid "Automatic / Default"
+msgstr "Otomatik / Varsayılan"
+
+msgid "Standard (Shafi, Maliki, Hanbali)"
+msgstr "Standart (Şafi, Maliki, Hanbeli)"
+
+msgid "Hanafi"
+msgstr "Hanefi"
+
+msgid "Icon + Prayer name + Remaining time"
+msgstr "Simge + vakit adı + kalan süre"
+
+msgid "Prayer name + Remaining time"
+msgstr "Vakit adı + kalan süre"
+
+msgid "Only remaining time"
+msgstr "Sadece kalan süre"
+
+msgid "Only icon"
+msgstr "Sadece simge"

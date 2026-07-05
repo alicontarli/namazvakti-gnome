@@ -1,0 +1,230 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: namaz-vakti-gnome\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Namaz Vakti Gnome"
+msgstr "Namaz Vakti Gnome"
+
+msgid "Loading..."
+msgstr "Memuat..."
+
+msgid "Loading Location..."
+msgstr "Memuat Lokasi..."
+
+msgid "Refresh now"
+msgstr "Perbarui sekarang"
+
+msgid "Settings"
+msgstr "Pengaturan"
+
+msgid "Offline"
+msgstr "Luring"
+
+msgid "Error - Failed to load data"
+msgstr "Kesalahan - Gagal memuat data"
+
+msgid "Error"
+msgstr "Kesalahan"
+
+msgid "Offline — using cached timings"
+msgstr "Luring — menggunakan jadwal tersimpan"
+
+msgid "Last update: %1$s"
+msgstr "Pembaruan terakhir: %1$s"
+
+msgid "%1$s time has entered."
+msgstr "Waktu %1$s telah masuk."
+
+msgid "%2$d minute(s) remaining for %1$s"
+msgstr "%2$d menit lagi hingga %1$s"
+
+msgid "Imsak"
+msgstr "Imsak"
+
+msgid "Sunrise"
+msgstr "Fajar/Syuruq"
+
+msgid "Dhuhr"
+msgstr "Dzuhur"
+
+msgid "Asr"
+msgstr "Ashar"
+
+msgid "Maghrib"
+msgstr "Maghrib"
+
+msgid "Isha"
+msgstr "Isya"
+
+msgid "%1$d hour(s) %2$d minute(s)"
+msgstr "%1$d jam %2$d menit"
+
+msgid "%1$d minute(s)"
+msgstr "%1$d menit"
+
+msgid "%1$d min"
+msgstr "%1$d mnt"
+
+msgid "%1$s remaining until %2$s"
+msgstr "%1$s tersisa hingga %2$s"
+
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+msgid "Location: %1$s"
+msgstr "Lokasi: %1$s"
+
+msgid "General"
+msgstr "Umum"
+
+msgid "Location Settings"
+msgstr "Pengaturan Lokasi"
+
+msgid "Select the location method and enter your details for calculating prayer times."
+msgstr "Pilih metode lokasi dan masukkan koordinat/kota Anda untuk menghitung waktu shalat."
+
+msgid "Location Determination Method"
+msgstr "Metode Penentuan Lokasi"
+
+msgid "City and Country"
+msgstr "Kota dan Negara"
+
+msgid "Geographic Coordinates (Latitude / Longitude)"
+msgstr "Koordinat Geografis (Lintang / Bujur)"
+
+msgid "City"
+msgstr "Kota"
+
+msgid "Country"
+msgstr "Negara"
+
+msgid "Latitude"
+msgstr "Lintang"
+
+msgid "Longitude"
+msgstr "Bujur"
+
+msgid "Location Test"
+msgstr "Uji Lokasi"
+
+msgid "Performs a connection test to the AlAdhan API server using chosen settings"
+msgstr "Menguji koneksi ke server API AlAdhan dengan pengaturan yang dipilih"
+
+msgid "Verify Location and Refresh"
+msgstr "Verifikasi Lokasi dan Perbarui"
+
+msgid "Verifying..."
+msgstr "Memverifikasi..."
+
+msgid "Verified and Refreshed!"
+msgstr "Terverifikasi dan Diperbarui!"
+
+msgid "Verification Failed"
+msgstr "Verifikasi Gagal"
+
+msgid "Error: Connection Issue"
+msgstr "Kesalahan: Masalah Koneksi"
+
+msgid "Calculation Settings"
+msgstr "Pengaturan Perhitungan"
+
+msgid "Calculation Method"
+msgstr "Metode Perhitungan"
+
+msgid "Asr Calculation School"
+msgstr "Mazhab Ashar"
+
+msgid "Minute Adjustments"
+msgstr "Penyesuaian Menit"
+
+msgid "Prayer times are calculated based on the selected method. If there are discrepancies with your local mosque timetable, you can make minute-by-minute adjustments."
+msgstr "Waktu shalat dihitung berdasarkan metode yang dipilih. Jika ada perbedaan dengan jadwal masjid setempat, Anda dapat menyesuaikannya menit demi menit."
+
+msgid "Imsak Adjustment (Min)"
+msgstr "Penyesuaian Imsak (Menit)"
+
+msgid "Sunrise Adjustment (Min)"
+msgstr "Penyesuaian Sunrise (Menit)"
+
+msgid "Dhuhr Adjustment (Min)"
+msgstr "Penyesuaian Dzuhur (Menit)"
+
+msgid "Asr Adjustment (Min)"
+msgstr "Penyesuaian Ashar (Menit)"
+
+msgid "Maghrib Adjustment (Min)"
+msgstr "Penyesuaian Maghrib (Menit)"
+
+msgid "Isha Adjustment (Min)"
+msgstr "Penyesuaian Isya (Menit)"
+
+msgid "Appearance Settings"
+msgstr "Pengaturan Tampilan"
+
+msgid "Panel Display Mode"
+msgstr "Mode Tampilan Panel"
+
+msgid "Show Sunrise Time in Panel"
+msgstr "Tampilkan waktu fajar di panel"
+
+msgid "Show Imsak Time in Panel"
+msgstr "Tampilkan waktu imsak di panel"
+
+msgid "Use 24-Hour Format"
+msgstr "Gunakan format 24 jam"
+
+msgid "Show Tooltip (When hovering over panel)"
+msgstr "Tampilkan tooltip (saat kursor di atas panel)"
+
+msgid "Show Remaining Time in HH:MM Format"
+msgstr "Waktu tersisa dalam format HH:MM"
+
+msgid "Notification Settings"
+msgstr "Pengaturan Notifikasi"
+
+msgid "Send Notification at Prayer Time"
+msgstr "Kirim notifikasi saat masuk waktu shalat"
+
+msgid "Warn N Minutes Before Prayer Time (0 = Disabled)"
+msgstr "Ingatkan N menit sebelum waktu shalat (0 = Nonaktif)"
+
+msgid "Diyanet İşleri Başkanlığı (Turkey)"
+msgstr "Diyanet (Turki)"
+
+msgid "Muslim World League"
+msgstr "Liga Dunia Muslim (MWL)"
+
+msgid "ISNA"
+msgstr "Masyarakat Islam Amerika Utara (ISNA)"
+
+msgid "Egyptian General Authority of Survey"
+msgstr "Otoritas Survei Umum Mesir"
+
+msgid "Umm al-Qura, Makkah"
+msgstr "Umm al-Qura, Mekkah"
+
+msgid "Automatic / Default"
+msgstr "Otomatis / Default"
+
+msgid "Standard (Shafi, Maliki, Hanbali)"
+msgstr "Standar (Syafii, Maliki, Hambali)"
+
+msgid "Hanafi"
+msgstr "Hanafi"
+
+msgid "Icon + Prayer name + Remaining time"
+msgstr "Ikon + Nama shalat + Sisa waktu"
+
+msgid "Prayer name + Remaining time"
+msgstr "Nama shalat + Sisa waktu"
+
+msgid "Only remaining time"
+msgstr "Hanya sisa waktu"
+
+msgid "Only icon"
+msgstr "Hanya ikon"
+
