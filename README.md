@@ -1,106 +1,125 @@
 # Namaz Vakti Gnome
 
-GNOME Shell için sağ üst panelde sıradaki namaz vaktini ve bu vakte kalan süreyi bir bakışta gösteren sade, hafif ve modern bir eklentidir.
+A simple, lightweight, and modern GNOME Shell extension that displays the next Islamic prayer time and its remaining countdown directly in the status area of the top panel.
 
-Bu eklenti, GNOME 45+ ES Modules (ESM) ve Libsoup 3.0 teknolojilerini kullanan modern bir mimariye sahiptir.
+Developed with a modern GNOME Shell ESM (ES Modules) architecture, utilizing native `gjs` bindings and `libsoup 3.0` for network API queries.
 
-## Özellikler
+## Features
 
-*   **Panel Göstergesi:** Panelde `[hilal simgesi] Akşam · 02:43` şeklinde sıradaki vakti ve kalan süreyi (`HH:MM` veya dakika biçiminde) gösterir.
-*   **Geniş Tooltip:** Fare ile panelin üzerine gelindiğinde konum, sıradaki vakit saati ve kalan detaylı süreyi gösterir.
-*   **Açılır Menü (Dropdown):** Panel simgesine tıklandığında konum bilgisi, günün tüm vakitleri, sıradaki vaktin vurgulanması, manuel güncelleme düğmesi ve ayarlar bağlantısı sunar.
-*   **Önbellek (Cache):** AlAdhan API'den aylık takvim indirerek yerel diskte saklar. İnternet kesilse bile önbellek verileriyle kesintisiz çalışmaya devam eder.
-*   **Manuel Düzeltmeler:** Seçilen hesap yöntemi ile yerel takvim arasında fark oluşursa, her vakit için `-30` ila `+30` dakika arasında manuel düzeltme imkanı sağlar.
-*   **Gelişmiş Ayarlar:** Konum (Şehir/Ülke veya Koordinat), hesaplama yöntemleri, mezhep seçimi, panel görünüm seçenekleri (simge/yazı gizleme) ve bildirimler.
+*   **Top Panel Indicator:** Shows the next prayer time and countdown cleanly (e.g. `Imsak · 00:31` or `00:31`).
+*   **Comprehensive Tooltip:** Hovering over the indicator reveals a detailed overview of the location, target prayer time, and human-readable remaining duration.
+*   **Interactive Dropdown Menu:** Displays daily prayer times (with the active prayer highlighted), location details, a manual refresh button, and a settings shortcut.
+*   **Multilingual Support (10 Languages):** Fully translated out of the box in 10 major languages:
+    *   English (default fallback)
+    *   Turkish (Türkçe)
+    *   Arabic (العربية)
+    *   Bengali (বাংলা)
+    *   Spanish (Español)
+    *   French (Français)
+    *   German (Deutsch)
+    *   Russian (Русский)
+    *   Persian (فارسی)
+    *   Urdu (اردو)
+    *   Bahasa Indonesia (Indonesian)
+*   **Dynamic Language Overrides:** Allows overriding the extension language directly inside the settings UI (with instant redraw) regardless of the host system's primary locale.
+*   **Offline Mode & Cache:** Automatically downloads and caches monthly calendars from the AlAdhan API. The extension remains fully operational even if the internet connection is temporarily lost.
+*   **Manual Minute Adjustments:** Allows adjusting prayer calculations by `-30` to `+30` minutes per prayer to match local mosque timetables.
+*   **Customizable Preferences:** Configurable location options (city/country search or coordinates), calculation methods, jurisprudence schools, notification options, and layout toggles.
 
-## Gereksinimler
+## Requirements
 
-*   GNOME Shell 45, 46, 47, 48, 49 veya 50+
-*   `gjs` (Javascript bindings for GNOME)
-*   İnternet bağlantısı (ilk kurulumda ve ayarlar değiştiğinde veri çekmek için)
+*   GNOME Shell version: `45`, `46`, `47`, `48`, `49`, or `50+`
+*   `gjs` (JavaScript bindings for GNOME)
+*   `gettext` utilities (required to compile translations source files)
 
-## Yerel Kurulum
+## Local Installation
 
-Eklenti klasörünü kullanıcının uzantılar dizinine kopyalayın:
+To install the extension manually on your system:
 
-1.  Eklenti klasörünü kullanıcının uzantılar dizinine kopyalayın:
-    ```bash
-    mkdir -p ~/.local/share/gnome-shell/extensions/namaz-vakti-gnome@local
-    cp -r extension.js prefs.js metadata.json stylesheet.css schemas icons src ~/.local/share/gnome-shell/extensions/namaz-vakti-gnome@local/
-    ```
+### 1. Copy Files
+Clone or copy the project files to your local user extensions directory:
+```bash
+mkdir -p ~/.local/share/gnome-shell/extensions/namaz-vakti-gnome@local
+cp -r extension.js prefs.js metadata.json stylesheet.css schemas src locale ~/.local/share/gnome-shell/extensions/namaz-vakti-gnome@local/
+```
 
-2.  GSettings şemasını derleyin:
-    ```bash
-    glib-compile-schemas ~/.local/share/gnome-shell/extensions/namaz-vakti-gnome@local/schemas/
-    ```
+### 2. Compile Translations
+Compile the `.po` source files in the `po/` directory to binary `.mo` catalog files:
+```bash
+./compile_translations.sh
+```
 
-3.  **Önemli (Wayland):** Eğer Wayland oturumundaysanız, GNOME Shell yeni eklenen eklenti klasörünü otomatik olarak taramaz. Algılaması için **oturumu kapatıp (Log Out) tekrar giriş yapmanız** gerekmektedir. X11 kullanıyorsanız `Alt+F2` tuşlarına basıp `r` yazarak kabuğu yeniden başlatabilirsiniz.
+### 3. Compile GSettings Schema
+Compile the settings schema so that preferences can be stored:
+```bash
+glib-compile-schemas ~/.local/share/gnome-shell/extensions/namaz-vakti-gnome@local/schemas/
+```
 
-## Etkinleştirme ve Devre Dışı Bırakma
+### 4. Restart GNOME Shell
+*   **Wayland Session:** GNOME Shell does not scan for new extensions dynamically under Wayland. You must **log out and log back in** to detect the extension.
+*   **X11 Session:** You can press `Alt+F2`, type `r`, and press `Enter` to reload the shell.
 
-Oturumu yeniden başlattıktan sonra eklentiyi etkinleştirmek için:
+## Enabling the Extension
 
+Enable the extension from the terminal:
 ```bash
 gnome-extensions enable namaz-vakti-gnome@local
 ```
 
-Devre dışı bırakmak için:
-
+To disable:
 ```bash
 gnome-extensions disable namaz-vakti-gnome@local
 ```
 
-Ayrıca GNOME **Extensions (Uzantılar)** uygulamasını veya **Uzantı Yöneticisi (Extension Manager)** aracını kullanarak da görsel olarak açıp kapatabilirsiniz.
+Alternatively, you can manage the extension using the official GNOME **Extensions** app or **Extension Manager**.
 
-## Ayarlar
+## Preferences
 
-Eklenti ayarlarına gitmek için terminalden şu komutu çalıştırabilir veya Uzantılar uygulamasından "Ayarlar" butonuna basabilirsiniz:
-
+Open the settings window using:
 ```bash
 gnome-extensions prefs namaz-vakti-gnome@local
 ```
 
-### Ayar Grupları
+### Setting Sections
 
-1.  **Konum Ayarları:**
-    *   *Yöntem:* Şehir + Ülke veya Enlem + Boylam koordinatları.
-    *   *Konum Testi:* Ayarların doğruluğunu kontrol etmek için API üzerinden anlık test yapar.
-2.  **Hesaplama Ayarları:**
-    *   *Hesap Yöntemi:* Diyanet İşleri Başkanlığı (Türkiye), Muslim World League (MWL), ISNA, Umm al-Qura vb.
-    *   *İkindi Mezhebi:* Hanefi veya Standart (Şafi/Maliki/Hanbeli).
-3.  **Dakika Düzeltmeleri:** Vakitlerin yerel saatlerle birebir uyuşması için her vakte özel dakika düzeltmesi uygulanabilir.
-4.  **Görünüm Ayarları:**
-    *   Panelde Güneş ve İmsak vakitlerini gösterip gizleme, 24 saat biçimi, kalan sürenin `HH:MM` yerine dakika (`dk`) olarak gösterilmesi ve panel tooltip ayarları.
-5.  **Bildirim Ayarları:** Vakit geldiğinde veya vakte belirtilen dakika kala GNOME bildirimi gönderilmesini sağlar.
+1.  **Language Settings (at the top):** Choose between the system default language or force any of the 9 other supported languages. The preferences interface and panel update instantly.
+2.  **Location Settings:** Choose between searching by *City & Country* or entering *Latitude & Longitude*. Test coordinates or connection instantly with the *Verify Location* button.
+3.  **Calculation Settings:** Configure calculation parameters (e.g. Diyanet, Muslim World League, Umm al-Qura) and Asr calculation school (Standard or Hanafi).
+4.  **Minute Adjustments:** Fine-tune calculated times by adding or subtracting minutes.
+5.  **Appearance Settings:** Toggle panel options (like showing Imsak/Sunrise times, 24-hour clock, and duration format).
+6.  **Notification Settings:** Choose to receive desktop notifications at prayer times or custom minutes before.
 
-## Sorun Giderme
+## Troubleshooting & Logs
 
-Eklentiyle ilgili herhangi bir hata veya sorunla karşılaştığınızda GNOME Shell günlüklerini (günce loglarını) inceleyebilirsiniz:
-
+To inspect the runtime messages and debug logs generated by the extension, run:
 ```bash
-journalctl -f -o cat /usr/bin/gnome-shell
+journalctl -f -o cat /usr/bin/gnome-shell | grep -i namaz
 ```
 
-Sadece bu eklentiye ait logları filtrelemek için:
+## Packaging
 
-```bash
-journalctl -f -o cat /usr/bin/gnome-shell | grep -i vakit
-```
-
-## Paketleme
-
-Eklentiyi `.zip` dosyası olarak paketlemek için (örneğin GNOME Extensions web sitesine yüklemek veya dağıtmak için) proje kök dizininde şu python komutunu çalıştırabilirsiniz:
-
+To package the extension into a distributable `.zip` file (suitable for uploading to the GNOME Extensions website), run:
 ```bash
 python3 -c "
 import zipfile, os
-files = ['extension.js', 'prefs.js', 'metadata.json', 'stylesheet.css', 'schemas/org.gnome.shell.extensions.namaz-vakti-gnome.gschema.xml']
+files_to_zip = [
+    'extension.js', 'prefs.js', 'metadata.json', 'stylesheet.css',
+    'schemas/org.gnome.shell.extensions.namaz-vakti-gnome.gschema.xml',
+    'schemas/gschemas.compiled'
+]
 with zipfile.ZipFile('dist/namaz-vakti-gnome.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
-    for f in files: zipf.write(f)
-    for r, d, fs in os.walk('src'):
-        for f in fs: zipf.write(os.path.join(r, f))
-    for r, d, fs in os.walk('icons'):
-        for f in fs: zipf.write(os.path.join(r, f))
+    for f in files_to_zip:
+        zipf.write(f)
+    for root, dirs, files in os.walk('src'):
+        for file in files:
+            zipf.write(os.path.join(root, file))
+    for root, dirs, files in os.walk('locale'):
+        for file in files:
+            zipf.write(os.path.join(root, file))
 "
 ```
-Üretilen paket `dist/namaz-vakti-gnome.zip` yolunda oluşacaktır.
+The output file will be saved at `dist/namaz-vakti-gnome.zip`.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
