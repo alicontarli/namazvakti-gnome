@@ -75,7 +75,7 @@ class NamazVaktiButton extends PanelMenu.Button {
         this.settings = extension.getSettings();
         const _ = getTranslator(this.settings);
         
-        super._init(0.5, _('Namaz Vakti Gnome'), false);
+        super._init(0.5, 'namazvakti-gnome', false);
         this.add_style_class_name('namaz-vakti-button');
         
         this._enabled = true;
@@ -418,7 +418,7 @@ class NamazVaktiButton extends PanelMenu.Button {
         } else {
             body = formatString(_('%2$d minute(s) remaining for %1$s'), label, minutes);
         }
-        Main.notify(_('Namaz Vakti Gnome'), body);
+        Main.notify('namazvakti-gnome', body);
     }
 
     destroy() {
