@@ -32,7 +32,7 @@
       <description>AlAdhan prayer calculation method ID</description>
     </key>
     <key name="school" type="s">
-      <default>'1'</default>
+      <default>'0'</default>
       <summary>Asr calculation school</summary>
       <description>0 for Standard/Shafi/Maliki/Hanbali, 1 for Hanafi</description>
     </key>

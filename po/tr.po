@@ -210,11 +210,11 @@ msgstr "Ümmü-l Kurra, Mekke"
 msgid "Automatic / Default"
 msgstr "Otomatik / Varsayılan"
 
-msgid "Standard (Shafi, Maliki, Hanbali)"
-msgstr "Standart (Şafi, Maliki, Hanbeli)"
+msgid "Standard (Shafi, Maliki, Hanbali - Recommended for Diyanet)"
+msgstr "Standart (Şafi, Maliki, Hanbeli - Diyanet ile uyumlu)"
 
-msgid "Hanafi"
-msgstr "Hanefi"
+msgid "Hanafi (Later Asr time)"
+msgstr "Hanefi (Geç ikindi vakti)"
 
 msgid "Icon + Prayer name + Remaining time"
 msgstr "Simge + vakit adı + kalan süre"

@@ -24,8 +24,8 @@ export function getCalculationMethods(_) {
 
 export function getJurisprudenceSchools(_) {
     return [
-        { id: '0', name: _('Standard (Shafi, Maliki, Hanbali)') },
-        { id: '1', name: _('Hanafi') }
+        { id: '0', name: _('Standard (Shafi, Maliki, Hanbali - Recommended for Diyanet)') },
+        { id: '1', name: _('Hanafi (Later Asr time)') }
     ];
 }
 
