@@ -261,7 +261,7 @@ export default class NamazVaktiPreferences extends ExtensionPreferences {
         const notifyBeforeRow = new Adw.SpinRow({
             adjustment: new Gtk.Adjustment({
                 lower: 0,
-                upper: 15,
+                upper: 60,
                 step_increment: 1,
                 page_increment: 5
             })
