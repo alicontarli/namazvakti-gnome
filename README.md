@@ -1,5 +1,9 @@
 # Namaz Vakti Gnome
 
+> [!NOTE]
+> **This repository has been archived. Active development has moved to:**
+> **https://github.com/alicontarli/namazvakti**
+
 A simple, lightweight, and modern GNOME Shell extension that displays the next Islamic prayer time and its remaining countdown directly in the status area of the top panel.
 
 Developed with a modern GNOME Shell ESM (ES Modules) architecture, utilizing native `gjs` bindings and `libsoup 3.0` for network API queries.
